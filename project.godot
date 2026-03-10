@@ -1,0 +1,8 @@
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+
+[editor_overrides]
+text_editor/behavior/indent/type=0
