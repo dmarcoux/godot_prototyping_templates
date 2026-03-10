@@ -1,5 +1,15 @@
+[tool_alias]
+butler = "aqua:itchio/butler"
+
 [tools]
+butler = "15.26.1"
 godot = "4.6.1"
+
+[env]
+ITCHIO_USERNAME = "ciropotogames"
+ITCHIO_GAME = "TODO"
+# Use with 1Password CLI: `op run -- ...`
+BUTLER_API_KEY="op://Private/itch.io/API key"
 
 # Documentation for tasks: https://mise.jdx.dev/tasks/
 [tasks.godot]
@@ -27,3 +37,43 @@ run = [
   { tasks = [ "godot", "code" ] }
 ]
 alias = "gc"
+
+[tasks.deploy]
+description = "Build and deploy Godot project for all operating systems"
+depends = [ "deploy_*" ]
+
+[tasks.deploy_web]
+description = "Deploy a Web build to itch.io using butler"
+depends = [ "export_web" ]
+run = "op run -- butler push ./build/web $ITCHIO_USERNAME/$ITCHIO_GAME:web"
+
+[tasks.deploy_windows]
+description = "Deploy a Windows build to itch.io using butler"
+depends = [ "export_windows" ]
+run = "op run -- butler push ./build/windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows"
+
+[tasks.deploy_linux]
+description = "Deploy a Linux build to itch.io using butler"
+depends = [ "export_linux" ]
+run = "op run -- butler push ./build/linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux"
+
+[tasks.export_web]
+description = "Export the Godot project for Web"
+run = [
+  "mkdir -p build/web",
+  "godot --headless --export-release Web build/web/index.html",
+]
+
+[tasks.export_windows]
+description = "Export the Godot project for Windows"
+run = [
+  "mkdir -p build/windows",
+  "godot --headless --export-release Windows build/windows/$ITCHIO_GAME.exe",
+]
+
+[tasks.export_linux]
+description = "Export the Godot project for Linux"
+run = [
+  "mkdir -p build/linux",
+  "godot --headless --export-release Linux build/linux/$ITCHIO_GAME.x86_64",
+]

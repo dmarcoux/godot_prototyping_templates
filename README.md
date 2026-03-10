@@ -16,6 +16,13 @@ Create a new repository based on this repository:
 - With [GitHub's CLI](https://github.com/cli/cli), run `gh repo create
   NEW_REPOSITORY_NAME --template=dmarcoux/godot_templates`.
 
+### Assumptions
+
+- Prototypes are pushed to https://itch.io/. Adjust the values of environment
+  variables in [mise.toml](mise.toml). You use
+  [1Password](https://1password.com/) and its CLI to store/access your API key
+  for [butler](https://github.com/itchio/butler).
+
 # Development Environment
 
 Rely on [Mise](https://mise.jdx.dev/) to install tools, set environment
