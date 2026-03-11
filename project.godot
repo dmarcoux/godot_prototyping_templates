@@ -6,3 +6,6 @@ window/stretch/mode="canvas_items"
 
 [editor_overrides]
 text_editor/behavior/indent/type=0
+
+[rendering]
+textures/canvas_textures/default_texture_filter=0
