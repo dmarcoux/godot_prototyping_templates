@@ -6,7 +6,7 @@ butler = "15.26.1"
 godot = "4.6.1"
 
 [env]
-ITCHIO_USERNAME = "ciropotogames"
+ITCHIO_USERNAME = "devmarcoo"
 ITCHIO_GAME = "TODO"
 # Use with 1Password CLI: `op run -- ...`
 BUTLER_API_KEY="op://Private/itch.io/API key"
