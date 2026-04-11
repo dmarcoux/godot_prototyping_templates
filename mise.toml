@@ -3,7 +3,7 @@ butler = "aqua:itchio/butler"
 
 [tools]
 butler = "15.26.1"
-godot = "4.6.1"
+godot = "4.6.2"
 
 [env]
 ITCHIO_USERNAME = "devmarcoo"
