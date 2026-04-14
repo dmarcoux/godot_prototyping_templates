@@ -13,8 +13,19 @@ Create a new repository based on this repository:
 
   *OR*
 
-- With [GitHub's CLI](https://github.com/cli/cli), run `gh repo create
-  NEW_REPOSITORY_NAME --template=dmarcoux/godot_templates`.
+- With [GitHub's CLI](https://github.com/cli/cli):
+
+  Public repository:
+
+  ```bash
+  gh repo create NEW_REPOSITORY_NAME --template=dmarcoux/godot_prototyping_templates --public
+  ```
+
+  Private repository:
+
+  ```bash
+  gh repo create NEW_REPOSITORY_NAME --template=dmarcoux/godot_prototyping_templates --private
+  ```
 
 ### Assumptions
 
