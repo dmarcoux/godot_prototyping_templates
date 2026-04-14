@@ -8,7 +8,7 @@ prototype with this programming language.
 
 Create a new repository based on this repository:
 
-- Go to this [repository's page](https://github.com/dmarcoux/godot_templates),
+- Go to this [repository's page](https://github.com/dmarcoux/godot_prototyping_templates),
   click on the `Use this template` button and follow instructions.
 
   *OR*
